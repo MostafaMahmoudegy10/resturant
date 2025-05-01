@@ -1,10 +1,14 @@
 package com.resturant.resturant.entites;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Product {
@@ -21,7 +25,9 @@ public class Product {
     private byte[] image;
     
     private String lang; 
-
+    
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders = new HashSet<>();
     public Product() {
     }
 

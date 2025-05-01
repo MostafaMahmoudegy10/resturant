@@ -7,7 +7,7 @@ import com.resturant.resturant.entites.Product;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> { 
     List<Product> findByCategory(String category);
     List<Product> findByLang(String lang);
     List<Product> findByCategoryAndLang(String category, String lang);
